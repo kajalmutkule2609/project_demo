@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up Page</title>
+  <style>
+      /* Write all necessary css here  */
+      #signup{
+        margin: auto;
+        width: 800px;
+        text-align: center;
+      }
+      #signup-form{
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        margin: auto;
+      }
+      #signup-form>input{
+        width: 100%;
+        height: 50px;
+        margin-bottom: 30px;
+        border-radius: 5px;
+      }
+      #signup-form>:nth-last-child(1){
+        background-color: black;
+        width: 30%;
+        color: white;
+        margin: auto;
+        border-radius: 8px;
+      }
+  </style>
+</head>
+<body>
+  <div id="signup">
+    <h1>Please Enter Your Details</h1>
+    <form id="signup-form">
+      <input type="text" id="fname" placeholder="First Name *">
+      <input type="text" id="lname" placeholder="Last Name *">
+      <input type="email" id="email" placeholder="Email *">
+      <input type="email" id="Con_email" placeholder="Confirm Email *">
+      <input type="password" id="password" placeholder="Password *">
+      <input type="password" id="Con_password" placeholder="Confirm Password *">
+      <input type="submit" id="signupbtn" value="Sign UP" />
+    </form>
+  </div>
+</body>
+<script>
+  const signupForm = document.getElementById("signup-form");
+  const accountDataKey = "account-data";
+  const signupbutton=document.getElementById("signupbtn")
+signupForm.addEventListener("submit", (e) => {
+e.preventDefault();
+const fname = document.getElementById("fname").value;
+const lname = document.getElementById("lname").value;
+const email = document.getElementById("email").value;
+const con_email = document.getElementById("Con_email").value;
+const password = document.getElementById("password").value;
+const con_password = document.getElementById("Con_password").value;
+
+const accountData = {
+  fname,
+  lname,
+  email,
+  password,
+};
+window.location.href = '/Homepage.html';
+localStorage.setItem(accountDataKey, JSON.stringify(accountData));
+
+alert("Signup Successful");
+document.getElementById("signup-form").addEventListener("submit",function(event){
+  event.preventDefault();
+  var username=document.getElementById("signup-form").elements.namedItem("fname").value;
+  window.location.href="Homepage.html?username="+encodeURIComponent(username);
+  localStorage.setItem("username",username);
+})
+signupForm.reset();
+});
+
+</script>
+
+</html>

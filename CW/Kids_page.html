@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kids_shoes Shoeland</title>
+
+    <style>
+        .container {
+            width: 1600px;
+            height: 600px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            border: 3px solid rgb(244, 239, 239);
+            background-color: rgb(151, 120, 120);
+             padding-top: 80px;
+        }
+        div{
+            background-color: rgb(151, 120, 120);
+        }
+        .container img {
+            width: 90%;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            height: 400px;
+            border-radius: 5px;
+        }
+        #sort-by-price{
+            width: 250px;
+            height: 40px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        #filter{
+            width: 250px;
+            height: 40px;
+            border-radius: 5px;
+            
+        }
+        #logodiv{
+            width: 80%;
+            height: 120px;
+            margin: auto;
+            text-align: center;
+            background-color: rgb(243, 235, 235);
+        }
+        #logo{
+            width: 40%;
+            height: 100%;
+            margin-left: 25%;
+        }
+        .addtocart{
+        background-color:#00BCD4;
+         font-Size:20px;
+         border-radius: 5px;
+         margin-bottom: 20px;
+        
+        }
+        
+        #SBP{
+            font-size: 25px;
+            margin-left: 60px;
+            color: rgb(5, 4, 76);
+        }#FBC{
+            font-size: 25px;
+            margin-left: 188px;
+            color: rgb(5, 4, 76)
+        }
+        .range{
+            font-size: 20px;
+        }
+        #sortdiv{
+            background-color:rgb(245, 241, 241);
+            width: 80%;
+            margin-left: 188px;
+        }
+        #cartlink{
+            width: 30%;
+            margin-left: 15%;
+            font-size: 50px;
+            margin-bottom: 15%;
+        }
+       #product-list{
+        width: 80%;
+       }
+    </style>
+</head>
+
+<body>
+    <div id="logodiv"><img src="Project_logo.png" id="logo" alt="error"><a href="./cart.html" id="cartlink">Cart</a></div>
+    
+  <div id="sortdiv">
+    <label for="sort-by-price" id="SBP">Sort by Price:</label>
+    <select id="sort-by-price"  onchange="sortProducts(this.value)">
+      <option value=""></option>
+      <option value="low-to-high" class="range">Low to High</option>
+      <option value="high-to-low" class="range">High to Low</option>
+    </select>
+  </div>
+  
+  <div id="product-list"></div>
+  <label for="filter by category" id="FBC">Filter by Category :</label>
+    <select id="filter">
+      <option value=""></option>
+        <option value="" class="range">Select category</option>
+        <option value="crocs" class="range">crocs</option>
+        <option value="sports" class="range">sports</option>
+        <option value="casual" class="range">casual</option>
+    </select>
+    <div class="container"></div>
+</body>
+<script>
+    const PRODUCT_DATA = [
+        {
+            price: 2000,
+            productID: "kids1",
+            category: "crocs",
+            img: "https://thumbs.dreamstime.com/b/foam-clog-crocs-children-shoes-editorial-image-light-background-product-american-company-popular-footwear-140879433.jpg",
+        },
+        {
+            price: 1347,
+            productID: "kids2",
+            category: "crocs",
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4SELvY9iaaET3pVK6UAOYYdyuddjDHDgwbw&usqp=CAU",
+        },
+        {
+            price: 799,
+            productID: "kids3",
+            category: "crocs",
+            img: "https://i.ebayimg.com/images/g/fRMAAOSwnZlhIYhD/s-l1600.jpg",
+        },
+        {
+            price: 2000,
+            productID: "kids4",
+            category: "crocs",
+            img: "https://media.capeunionmart.co.za/i/capeunionmart/102225190_C51_7?$large_PROD$",
+        },
+        {
+            price: 1347,
+            productID: "kids5",
+            category: "sports",
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3lFCvqAyrFduXgRLDj9NNg-C8FcSzoS6e8A&usqp=CAU",
+        },
+        {
+            price: 979,
+            productID: "kids6",
+            category: "sports",
+            img: "https://cdn.fcglcdn.com/brainbees/images/products/300x364/13168991a.webp",
+        },
+        {
+            price: 2000,
+            productID: "kids7",
+            category: "sports",
+            img: "https://cdn.pixabay.com/photo/2018/01/03/03/32/childrens-shoes-3057511_960_720.jpg",
+        },
+        {
+            price: 1347,
+            productID: "kids8",
+            category: "sports",
+            img: "https://www.nepal.ubuy.com/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvODFyUTY1WG9mZEwuX0FDX1VMMTUwMF8uanBn.jpg",
+        },
+        {
+
+            price: 976,
+            productID: "kids9",
+            category: "sports",
+            img: "https://cdn.pixabay.com/photo/2013/05/31/20/33/running-shoes-115149__340.jpg",
+        },
+        {
+            price: 456,
+            productID: "kids10",
+            category: "sports",
+            img: "https://media.istockphoto.com/id/1350560575/photo/pair-of-blue-running-sneakers-on-white-background-isolated.jpg?b=1&s=170667a&w=0&k=20&c=liUSgX6SafJ7HWvefFqR9-pnf3KuH6v1lwQ6iEpePWc="
+        },
+        {
+            price: 986,
+            productID: "kids11",
+            category: "sports",
+            img: "https://rukminim1.flixcart.com/image/832/832/l572ufk0/shoe/g/d/v/8-brd-768-8-birde-peach-original-imagfxgmwvq6degj.jpeg?q=70",
+        },
+        {
+            price: 567,
+            productID: "kids12",
+            category: "sports",
+            img: "https://cdn.fcglcdn.com/brainbees/images/products/300x364/13091423a.webp",
+        },
+        {
+            price: 765,
+            productID: "kids13",
+            category: "sports",
+            img: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51Phf2TGnXL.jpg",
+        },
+        {
+            price: 9999,
+            productID: "kids14",
+            category: "sports",
+            img: "https://m.media-amazon.com/images/I/719e78+fj3L._AC_SR920,736_.jpg",
+        },
+        {
+            price: 1347,
+            productID: "kids15",
+            category: "sports",
+            img: "https://images-static.nykaa.com/media/catalog/product/9/6/96902a7NB_PUMAX00156136_1.jpg",
+        },
+        {
+            price: 799,
+            productID: "kids16",
+            category: "sports",
+            img: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61LeWOA59eS._UY575_.jpg",
+        },
+        {
+            price: 2000,
+            productID: "kids17",
+            category: "casual",
+            img: "https://cdn.shopify.com/s/files/1/0062/1532/products/40045-610_WALLYYOUTHFUNKMONO_RED_PAIRSIDE.jpg?v=1679386273&width=400",
+        },
+        {
+            price: 1347,
+            productID: "kids18",
+            category: "casual",
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQun6yZJiQi3tvDB9acGPf25e_jdmfTjdJO-YzauCYYq7zi934C9lmzm18g5QiUR5_cdTI&usqp=CAU",
+        },
+        {
+         
+            price: 979,
+            productID: "kids19",
+            category: "casual",
+            img: "https://cdn.fcglcdn.com/brainbees/images/products/300x364/12231698a.webp",
+        },
+        {
+            price: 2000,
+            productID: "kids20",
+            category: "casual",
+            img: "https://cdn.fcglcdn.com/brainbees/images/products/300x364/10438699a.webp",
+        },
+        {
+            price: 1347,
+            productID: "kids21",
+            category: "casual",
+            img: "https://n1.sdlcdn.com/imgs/h/u/1/1-Pair-Kids-Girls-Casual-SDL171796677-2-54f00.JPEG",
+        },
+        {
+            price: 976,
+            productID: "kids22",
+            category: "casual",
+            img: "https://i.ebayimg.com/images/g/tEQAAOSwhZ5be93J/s-l500.jpg",
+        },
+        {
+            price: 456,
+            productID: "kids23",
+            category: "casual",
+            img: "https://cdn.fcglcdn.com/brainbees/images/products/438x531/13182468a.webp"
+        },
+        {
+            price: 986,
+            productID: "kids24",
+            category: "casual",
+            img: "https://cdn.fcglcdn.com/brainbees/images/products/438x531/13075822a.webp",
+        },
+    ];
+
+    const container = document.querySelector(".container");
+    const filter = document.querySelector("#filter");
+    const productListEl = document.getElementById("product-list");
+    const lowToHighBtn = document.getElementById("sort-low-to-high");
+    const highToLowBtn = document.getElementById("sort-high-to-low");
+
+
+    let LSData = localStorage.getItem("cart");
+
+    if (LSData === null) {
+        LSData = [];
+    } else {
+        LSData = JSON.parse(LSData);
+    }
+
+    console.log(PRODUCT_DATA);
+    filter.addEventListener("change", function () {
+        if (filter.value === "") {
+            Display(PRODUCT_DATA);
+        } else {
+            let filtered = PRODUCT_DATA.filter(function (element) {
+                if (element.category === filter.value) {
+                    return true;
+                } else {
+                    return false;
+                }
+            })
+            Display(filtered);
+        }
+    })
+
+
+
+    Display(PRODUCT_DATA);
+    function Display(data) {
+
+        container.innerHTML = "";
+        for (let i = 0; i < data.length; i++) {
+            const product = document.createElement("div");
+
+            const image = document.createElement("img");
+            image.setAttribute("src", data[i].img);
+
+            const price = document.createElement("p");
+            price.style.fontSize="30px"
+            price.innerText = data[i].price;
+            if (data[i].price >= 1000) {
+                price.style.color = "red";
+            }
+            const productid=document.createElement("h2");
+            productid.innerText=data[i].productID
+
+            const category = document.createElement("p");
+            category.innerText = data[i].category;
+            category.style.fontSize="30px"
+
+            const addToCart = document.createElement("button");
+            addToCart.innerText = "Add to Cart";
+            addToCart.classList.add("addtocart");
+            addToCart.addEventListener("click", function () {
+                LSData.push(data[i]);
+                localStorage.setItem("cart", JSON.stringify(LSData));
+            })
+
+
+            product.append(image, price,productid,category, addToCart);
+            container.append(product);
+        }
+
+    }
+    function sortProducts(sortOrder) {
+  let sortedProducts;
+
+  if (sortOrder === "low-to-high") {
+    sortedProducts = PRODUCT_DATA.slice().sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+  } else if (sortOrder === "high-to-low") {
+    sortedProducts = PRODUCT_DATA.slice().sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+  } else {
+    sortedProducts = PRODUCT_DATA;
+  }
+
+  Display(sortedProducts);
+}
+//  let sorteditems=document.getElementById("sort-by-price")
+// sorteditems.addEventListener("change", function() {
+//   const selectedValue = sorteditems.value;
+//   sortProducts(selectedValue);
+// });
+</script>
+
+</html>

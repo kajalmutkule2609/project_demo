@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.licious.in/image/licious_favicon.ico"/>
+    <title>Shoeland - Payment</title>
+    <style>
+        *{
+    box-sizing: border-box;
+    font-family: 'Segoe UI Symbol';
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    background-image: url();
+}
+#navbar{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-left: 110px;
+    padding-right: 140px;
+    position: relative;
+    gap: 38px;
+    margin: auto;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.logo{
+    flex-basis: 100px;
+}
+.logo img{
+    width: 200px;
+}
+#navbar div{
+    display: flex;
+}
+form {
+    margin: 0 auto;
+    width: 30%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 0px 20px 20px 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+  
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(25, 2, 2);
+}
+
+#name{
+    padding: 5px;
+    width: 70%;
+}
+#address{
+    padding: 5px;
+    width: 70%;
+}
+#mobile{
+    padding: 5px;
+    width: 70%;
+}
+#otpsubmit{
+    padding: 5px;
+    width: 55%;
+    display: none;
+}
+#paymethod{
+    padding: 5px;
+    width: 70%;
+    cursor: pointer;
+}
+#paymethod option{
+    font-weight: bold;
+    color: rgb(6, 6, 30);
+    font-size: medium;
+}
+#showimg{
+    width: 20%;
+}
+#showimg img{
+    width: 100%;
+}
+#submit{
+    padding: 7px 20px 7px 20px;
+    border-radius: 5px;
+    border: 2px solid red;
+    background-color: rgb(255, 211, 211);
+    font-weight: bold;
+    cursor: pointer;
+}
+#finsubmit{
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: rgb(255, 211, 211);
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+}
+#topbar{
+    margin: auto;
+    display: block;
+    margin-top: 30px;
+    width: 20%;
+}
+#topbar1{
+    margin: auto;
+    display: block;
+    margin-top: 30px;
+    width: 10%;
+}
+#footer{
+    width: 100%;
+    background-color: rgb(46, 46, 46);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#footer div{
+    width: 70%;
+    color: white;
+    font-size: 12px;
+    margin: auto;
+    text-align: center;
+    line-height: 20px;
+}
+@media all and (max-width:969px){
+    #navbar{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    form{
+        width: 40%;
+    }
+    #topbar{
+        width: 15%;
+    }
+    #topbar1{
+        width: 15%;
+    }
+}
+@media all and (max-width:770px){
+    #navbar{
+        height: 70px;
+    }
+    #navbar>div{
+        display: none;
+    }
+    #navbar>div:nth-child(2){
+        display: block;
+    }
+    #navbar>div:nth-child(3){
+        width: 200px;
+        display: block;
+    }
+    form{
+        width: 50%;
+    }
+    #footer div{
+        width: 90%;
+    }
+    #topbar{
+        width: 15%;
+    }
+    #topbar1{
+        width: 15%;
+    }
+}
+@media all and (max-width:600px){
+    form{
+        width: 60%;
+    }
+    #topbar{
+        width: 18%;
+    }
+    #topbar1{
+        width: 18%;
+    }
+
+}
+@media all and (max-width:400px){
+    form{
+        width: 80%;
+    }
+    #topbar{
+        width: 20%;
+    }
+    #topbar1{
+        width: 30%;
+    }
+}
+.address>img{
+    width:15%;
+    margin-top: 10px;
+}
+.homepage img{
+    width: 30%;
+}
+.login img{
+    width: 20%;
+}
+.address p{
+    font-size: 20px;
+}
+.login a{
+    font-size: 20px; 
+    margin-top: 10px;
+}
+.homepage a{
+    font-size: 20px; 
+    margin-top: 15px;
+}
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div class="logo"><img src="Project_logo.png" alt=""></div>
+        <div class="address">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzJYLCOJ3OK-0wM3-oC_3fekvvJlwILQpGSA&usqp=CAU" alt="">
+            <p>Delhi, India</p>
+        </div>
+        <div class="login">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqUgMADTBNhhZ3HyBOQuDlI7ORavOC2xjWcw&usqp=CAU" alt="">
+            <a id="logout" style="color: black; text-decoration: none;" >Logout</a>
+        </div>
+        <div class="homepage">
+            <img src="data:image/jpeg;base64,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" alt="">
+            <a style="color: black; text-decoration: none;" href="./Homepage.html">Homepage</a>
+        </div>
+    </div>
+    <img id="topbar" src="https://media0.giphy.com/media/7qWF0zp5sXDFyqup0y/giphy.gif?cid=6c09b952c5ak24eftfiw0x5tlfb8askqp1pzbrqsec8aikhq&rid=giphy.gif&ct=s" alt="">
+    <form>
+        <h1 style="text-align: center; letter-spacing: 2px;">Delivery Details</h1>
+        <h3>Total Cart Price is ₹:-<span id="price">1000</span></h3>
+        <label for="name">Full Name</label><br />
+        <input type="text" id="name" placeholder="Please Enter Your Full Name" required><br /><br />
+        <label for="address">Current Address</label><br />
+        <input type="text" id="address" placeholder="Please Enter Your Current Address" required><br /><br />
+        <label for="mobile">Active Mobile No.</label><br />
+        <input type="tel" id="mobile" placeholder="Please Enter Your Mobile No." required><br /><br />
+        <label for="paymethod">Payment Method</label><br />
+        <select id="paymethod">
+            <option value="">Select Anyone</option>
+            <option value="cash">Cash on Delivery</option>
+            <option value="upi">UPI</option>
+            <option value="net">Net Banking</option>
+            <option value="wallet">Wallet</option>
+        </select><br /><br />
+        <input type="number" id="otpsubmit" placeholder="Put here OTP"><button id="finsubmit">Submit</button>
+        <div id="showimg"></div>
+        <button id="submit">Generate OTP</button>
+      </form>      
+    <p style="text-align: center;">Please fill the form to confirm Order</p>
+    <br><br><br>
+    <div id="footer">
+        <div>
+            <p>©Shoeland Ltd. All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+<script>
+    let paymentdata = JSON.parse(localStorage.getItem("paymentdata")) || [];
+
+let submit = document.getElementById("submit");
+let price = document.getElementById("price");
+let showimg = document.getElementById("showimg");
+let logout= document.getElementById("logout");
+let otpinput= document.getElementById("otpsubmit");
+let otpsubmit= document.getElementById("finsubmit");
+
+logout.addEventListener("click", function(){
+    alert("Logout Successful!!");
+    setTimeout(() => {
+        window.location.href = "./Homepage.html";
+    }, 1000);
+})
+
+Display(paymentdata);
+
+function Display(data){
+
+    data.forEach(element => {
+
+        price.innerText = element.total;
+    });
+}
+
+submit.addEventListener("click", function(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let address = document.getElementById("address").value;
+    let mobile = document.getElementById("mobile").value;
+    let payment = document.getElementById("paymethod").value;
+
+    
+    if (name.trim() === "" || address.trim() === "" || mobile.trim() === "" || payment==="") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    let otp = Math.floor(Math.random()* 9000) + 1000;
+    console.log("Your 4 digit otp is "+otp);
+    console.log(typeof(otp));
+
+    alert("Your 4 digit OTP is "+otp);
+
+    otpinput.style.display = "inline";
+    otpsubmit.style.display = "inline";
+
+    otpsubmit.addEventListener("click", function(e){
+        e.preventDefault();
+
+        if(Number(otpinput.value) === otp){
+            showimg.innerHTML = '<img id="topbar1" src="https://thumbs.gfycat.com/VariablePoliticalBurro-max-1mb.gif">';
+            alert("Order Placed Successfully");
+
+            setTimeout(() => {
+                window.location.href = "./Homepage.html"
+                alert("your order is confirmed")
+            }, 8000);
+
+            localStorage.removeItem("cart");
+            localStorage.removeItem("paymentdata");
+        }else{
+            alert("Your OTP is wrong")
+        }
+    })
+
+
+})
+
+
+</script>
+</html>

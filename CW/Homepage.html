@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        #black{
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: row;
+        }
+        #black img{
+            width: 20%;
+            height: 20px;
+            margin-top: 20px;
+        }
+        #black h3{
+            width:70% ;
+           text-align: center;
+           color: white;
+        }
+        #box{
+            background-color: black;
+            width: 15%;
+            height: 30px;
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between;
+        }
+
+        div {
+            display: flex;
+            justify-content: space-around;
+            height: 50px;
+            border:2px solid; color: black;
+        }
+        #main{
+            width: 15%;
+            height: 30px;
+            margin-top: 10px;
+            border:2px solid; color: black;
+        }
+        #main img{
+            width: 10%;    
+        }
+        #main > #search{
+            width: 70%;
+            border:none
+            
+        }
+        div img{
+            width: 15%;
+            height: 100%;
+            justify-content: left;
+        }
+       #top>:nth-last-child(2){
+        width: 4%;
+        height: 30px;
+        margin-top: 10px;
+       } 
+       #top>:nth-last-child(1){
+        width: 4%;
+        height: 30px;
+        margin-top: 10px;
+       } 
+       #del{
+       height: 300px;
+       display: flex;
+       flex-direction: row;
+       margin-top: 20px;
+       border: none;
+       }
+       #mid{
+        
+        background-image: url('https://i.pinimg.com/originals/4b/fd/64/4bfd64f9b6d03e4129c166dfa16e6068.jpg');
+       background-size: cover;
+       width: 100%;
+       height: 1000px;
+       border: none;
+       margin-top: 20px;
+       }
+       #del >div{
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border: none;
+       }
+       #del>div>img{
+        width: 50%;
+        text-align: center;
+        margin-top: 40px;
+       }
+       #del>:nth-child(2)>:nth-child(1){
+        width: 30%;
+        margin-bottom: 40px;
+        text-align: center;
+       }
+       #del>:nth-child(3)>:nth-child(1){
+        width: 40%;
+        text-align: center;
+       }
+       #del>:nth-child(4)>:nth-child(1){
+        width: 30%;
+        margin-bottom: 40px;
+        text-align: center;
+       }
+       #sec_last{
+        background-color: black;
+        align-items: center;
+        color: white;
+        text-decoration: underline;
+        margin-top: 20px;
+       }
+       #sec_last a{
+        color: white;
+       }
+       #last{
+        background-color: black;
+        color: white;
+        height: 500px;
+        display: flex;
+        flex-direction: row;
+       }
+       #last h3{
+        color: white;
+       }
+       #last h2{
+        color: white;
+       }
+       .divs{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+       }
+       .divs2{
+        width: 90%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+       }
+       #nav{
+        align-items: center;
+        color: rgb(180, 55, 180);
+        border: none;
+       }
+       #top a{
+        color: black;
+        align-items: center;
+        text-decoration: none;
+       }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <h1><a href="./Sale.html">Todays best offer 50-60% OFF</a></h1>
+    </div>
+    <div id="black">
+     <h3><a href="./sign-up.html">SIGN UP FOR 20% OFF</a></h3>
+    <div id="box">
+     <h3 id="my-account">MY ACCOUNT</h3>
+     <img src="account.png" alt=""></div>
+    </div>
+    <div id="top">
+        <img src="Project_logo.png" alt="error">
+       <a href="./Womens_page.html"><h3>WOMAN</h3></a>
+       <a href="./mens_page.html"><h3>MEN</h3></a>
+       <a href="./Kids_page.html"><h3>KIDS</h3></a>
+       <h3>JIBBITZ</h3>
+       <a href="./Sale.html"><h3>SALE</h3></a>
+       <h3>FEATURED</h3>
+      <div id="main"><input type="text" id="search" placeholder="search" value="Search">
+    <img src="https://www.pngmart.com/files/22/Loupe-PNG-File.png" alt=""></div> 
+    <img src="https://static.thenounproject.com/png/3386813-200.png" alt="Error">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRio7cRO5z4lLiH3YNp8eyd54iTjWh3-3w6g&usqp=CAU" alt="">
+    </div>
+    <div id="mid">
+    </div>
+    <div id="del">
+    <div> <img src="https://thumbs.dreamstime.com/b/free-shipping-text-standing-delivery-truck-d-illustration-109380050.jpg" alt=""> 
+    <h2>Free Shipping</h2>
+    <p>Free Shipping on all orders aboven RS.995</p></div>
+    <div> <img src="data:image/jpeg;base64,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" alt=""> 
+    <h2>Easy Returns</h2>
+    <p>Change your mind? No problem, Our free returns process makes it easy</p></div>
+    <div> <img src="https://img.freepik.com/premium-vector/empty-golden-vintage-badge-retro_686319-297.jpg?size=338&ext=jpg&ga=GA1.2.1068697681.1677838418&semt=ais" alt=""> 
+    <h2>Shoeland Guarantee</h2>
+    <p>Shoeland products are covered by a 90-day warranty</p></div>
+    <div> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX1cKZiIpYijWs3AhIRwwV-YMttMT_4l42aA&usqp=CAU" alt=""> 
+    <h2>Your information is secure</h2>
+    <p>100% secured transaction using SSL encrypted connection</p></div>
+    </div>
+    <div id="sec_last">
+        <p>JOIN SHOELAND CLUB & GET 15% OFF YOUR NEXT PURCHASE</p>
+        <a href="./Sign-up.html">SIGN UP FOR FREE</a>
+        <a href="./Sign-in.html">SIGN INTO MY ACCOUNT</a>
+    </div>
+    <div id="last">
+        <div class="divs">
+            <h2>Crocs Insiders</h2>
+            <h3>Shoeland club</h3>
+            <h3>Collaboration and Limited Editions</h3>
+            <h3>Student Discount</h3>
+            <h3>Teacher Discount</h3>
+            <h3>Military Discount</h3>
+            <h3>Healthcare Discount</h3>
+            <h3>Affiliate Prpgram</h3>
+        </div>
+        <div class="divs2">
+            <h2>Company</h2>
+            <h3>About Shoeland</h3>
+            <h3>Careers</h3>
+            <h3>Investors relations</h3>
+            <h3>Custom Orders</h3>
+            <h3>Wholesale Inquiries</h3>
+        </div>
+        <div class="divs2">
+            <h2>Help</h2>
+            <h3>Oder Status and Returns</h3>
+            <h3>FAQs</h3>
+            <h3>Size Chart</h3>
+            <h3>Accessibility</h3>
+            <h3>Caring for your Shoeland</h3>
+        </div>
+        <div class="divs">
+            <h2>Customer Services</h2>
+            <h3>Mon- Opens at 9 AM ET</h3>
+            <h3>Tues-Thurs - 24 Hours</h3>
+            <h3>Fri - Closes at 5 PM ET</h3>
+            <h3>Sat -Sun  -  CLOSED</h3>
+            <h3>Contact us</h3>
+        </div>
+    </div>
+</body>
+<script>
+    window.addEventListener("load",function(){
+        var urlParams=new URLSearchParams(window.location.search);
+        var username=urlParams.get("username");
+        if(username){
+            document.getElementById("my-account").textContent=username;
+        }
+    });
+</script>
+</html>
