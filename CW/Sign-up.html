@@ -66,14 +66,14 @@ const accountData = {
   email,
   password,
 };
-window.location.href = '/Homepage.html';
+window.location.href = '/index.html';
 localStorage.setItem(accountDataKey, JSON.stringify(accountData));
 
 alert("Signup Successful");
 document.getElementById("signup-form").addEventListener("submit",function(event){
   event.preventDefault();
   var username=document.getElementById("signup-form").elements.namedItem("fname").value;
-  window.location.href="Homepage.html?username="+encodeURIComponent(username);
+  window.location.href="index.html?username="+encodeURIComponent(username);
   localStorage.setItem("username",username);
 })
 signupForm.reset();
